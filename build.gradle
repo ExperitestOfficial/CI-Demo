@@ -16,12 +16,33 @@ repositories {
 dependencies {
 	compile 'org.testng:testng:6.9.10'
 	compile 'io.appium:java-client:4.1.2'
-	compile 'com.experitest:appium-seetest-extension:11.8'
 	compile 'com.experitest:repo:+'
 }
 
 test {
 	useTestNG() {
 		suites './testng.xml'
-	}
+}
+
+sourceSets {
+    main {
+        runtimeClasspath = files(output.resourcesDir) + runtimeClasspath
+    }
+    test{
+        runtimeClasspath = main.runtimeClasspath
+    }
+}
+	
+	
+	
+task runTests(type: JavaExec, dependsOn: 'classes') {
+    main = 'org.testng.TestNG'
+    classpath = files("./src/test/resources",
+                      project.sourceSets.main.compileClasspath,
+                      project.sourceSets.test.compileClasspath,
+                      project.sourceSets.main.runtimeClasspath,
+                      project.sourceSets.test.runtimeClasspath)
+    args = ["-parallel",  "methods", "-threadcount", "1", "-d", "./build/test-output", "./testng.xml"]
+}
+
 }
