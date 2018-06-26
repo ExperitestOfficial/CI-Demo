@@ -33,7 +33,7 @@ public class AndroidTest {
 		dc.setCapability("build.number", "111"+System.getenv("BUILD_NUMBER"));
 		dc.setCapability("accessKey", System.getenv("accessKey")); 
         dc.setCapability(MobileCapabilityType.APP, "cloud:com.experitest.eribank/com.experitest.ExperiBank.LoginActivity");
-        dc.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.experitest.ExperiBank");
+        dc.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.experitest.eribank");
         dc.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.experitest.ExperiBank.LoginActivity");
 //	    dc.setCapability("instrumentApp", true);
         dc.setCapability("stream", "ci.demo");
