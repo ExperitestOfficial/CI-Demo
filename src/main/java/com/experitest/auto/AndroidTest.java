@@ -22,7 +22,7 @@ public class AndroidTest extends TestBase {
 	protected AndroidDriver<AndroidElement> driver = null;
 	protected DesiredCapabilities dc = new DesiredCapabilities();
 
-    @BeforeClass
+    @BeforeTest
     @Parameters("deviceQuery")
     public void setUp(@Optional("@os='android'") String deviceQuery) throws MalformedURLException {
         dc.setCapability("testName", testName);
@@ -47,7 +47,7 @@ public class AndroidTest extends TestBase {
         driver.findElement(By.xpath("//*[@id='loginButton']")).click();
     }
 
-    @AfterClass
+    @AfterTest
     public void tearDown() {
         driver.quit();
     }

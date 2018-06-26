@@ -9,7 +9,7 @@ public class TestBase {
 	protected DesiredCapabilities dc;
 
 
-	@BeforeTest
+	@BeforeSuite
 	public void setUp(ITestContext testContext) throws Exception {
 
 		dc = new DesiredCapabilities();
