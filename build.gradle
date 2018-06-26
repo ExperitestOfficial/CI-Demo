@@ -17,7 +17,6 @@ dependencies {
 	compile 'org.testng:testng:6.9.10'
 	compile 'io.appium:java-client:4.1.2'
 	compile 'com.experitest:repo:+'
-	
 }
 
 test {

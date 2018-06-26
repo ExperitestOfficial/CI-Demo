@@ -16,7 +16,7 @@ import org.testng.annotations.Test;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class AndroidTest extends TestBase {
+public class AndroidTest {
 
 	private String testName = "Demo Android Phone";
 	protected AndroidDriver<AndroidElement> driver = null;
@@ -29,14 +29,13 @@ public class AndroidTest extends TestBase {
 		dc.setCapability("deviceQuery", deviceQuery);
 		dc.setCapability("reportDirectory", "reports");
 		dc.setCapability("reportFormat", "xml");
- 
+		dc.setCapability("build.number", System.getenv("BUILD_NUMBER"));
+		dc.setCapability("accessKey", System.getenv("accessKey")); 
         dc.setCapability(MobileCapabilityType.APP, "cloud:com.experitest.eribank/com.experitest.ExperiBank.LoginActivity");
         dc.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.experitest.ExperiBank");
         dc.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.experitest.ExperiBank.LoginActivity");
 	    dc.setCapability("instrumentApp", true);
-	    dc.setCapability("platform","Android");
-	    
-        driver = new AndroidDriver<AndroidElement>(new URL(System.getenv("URL")), dc);
+        driver = new AndroidDriver<AndroidElement>(new URL(System.getenv("url")), dc);
     }
 
     @Test
