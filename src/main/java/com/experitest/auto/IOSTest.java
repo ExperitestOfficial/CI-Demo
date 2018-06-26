@@ -17,7 +17,7 @@ import io.appium.java_client.remote.IOSMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 
 
-public class IOSTest  {
+public class IOSTest extends TestBase  {
 
 	private String testName = "Demo iOS";
     protected IOSDriver<IOSElement> driver = null;
@@ -26,16 +26,14 @@ public class IOSTest  {
 	@BeforeTest
 	@Parameters("deviceQuery")
 	public void setUp(@Optional("@os='ios'") String deviceQuery) throws Exception{
-        dc.setCapability("testName", testName);
 		dc.setCapability("deviceQuery", deviceQuery);
 		dc.setCapability("reportDirectory", "reports");
-		dc.setCapability("reportFormat", "xml");
-		dc.setCapability("build.number", System.getenv("BUILD_NUMBER"));
-		dc.setCapability("accessKey", System.getenv("accessKey")); 
+		dc.setCapability("reportFormat", "xml"); 
 	    dc.setCapability(MobileCapabilityType.APP, "cloud:com.experitest.ExperiBank");
 	    dc.setCapability("appVersion", "2441");
 	    dc.setCapability(IOSMobileCapabilityType.BUNDLE_ID, "com.experitest.ExperiBank");
 	    dc.setCapability("instrumentApp", true);
+	    dc.setCapability("platform","iOS");
         driver = new IOSDriver<IOSElement>(new URL(System.getenv("url")), dc);
 	}
 
