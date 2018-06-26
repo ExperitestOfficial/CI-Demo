@@ -35,7 +35,7 @@ public class AndroidTest {
         dc.setCapability(MobileCapabilityType.APP, "cloud:com.experitest.eribank/com.experitest.ExperiBank.LoginActivity");
         dc.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.experitest.ExperiBank");
         dc.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.experitest.ExperiBank.LoginActivity");
-	    dc.setCapability("instrumentApp", true);
+//	    dc.setCapability("instrumentApp", true);
         dc.setCapability("stream", "ci.demo");
         dc.setCapability("platform", "Android");
         System.out.println("Creating AndroidDriver");
