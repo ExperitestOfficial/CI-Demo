@@ -1,5 +1,6 @@
 package com.experitest.auto;
 
+import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.openqa.selenium.*;
 import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.CapabilityType;
@@ -43,10 +44,8 @@ public class WebTest {
     public void testExperitest() throws InterruptedException {
         System.out.println("Hitting experitest.com url");
         driver.get("https://www.experitest.com/");
-        System.out.println("Waiting for xpath /html/body/div[1]/nav/div/button");
-        Thread.sleep(20000);
-        new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[1]/nav/div/button")));
-        Thread.sleep(10000);
+        System.out.println("Waiting for #menu-item-8537 > a");
+        new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#menu-item-8537 > a")));
         System.out.println("finished testExperitest()");
     }
 
