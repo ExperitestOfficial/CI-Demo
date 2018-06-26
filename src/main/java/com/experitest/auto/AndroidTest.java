@@ -44,6 +44,11 @@ public class AndroidTest {
 
     @Test
     public void test() {
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         System.out.println("Find username field");
         driver.findElement(By.xpath("//*[@id='usernameTextField']")).sendKeys("company");
         driver.hideKeyboard();
