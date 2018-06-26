@@ -32,7 +32,7 @@ public class IOSTest  {
 		dc.setCapability("reportFormat", "xml");
 		dc.setCapability(MobileCapabilityType.ORIENTATION, "PORTRAIT");
 
-		dc.setCapability("build.number", "111"+System.getenv("BUILD_NUMBER"));
+		dc.setCapability("build.number", "000"+System.getenv("BUILD_NUMBER"));
 		dc.setCapability("accessKey", System.getenv("accessKey")); 
 	    dc.setCapability(MobileCapabilityType.APP, "cloud:com.experitest.ExperiBank");
 	    dc.setCapability("appVersion", "2441");

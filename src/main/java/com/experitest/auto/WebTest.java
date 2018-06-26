@@ -30,7 +30,7 @@ public class WebTest {
         dc.setCapability(CapabilityType.VERSION, "Any");
         dc.setCapability(CapabilityType.PLATFORM, platformName);
 		dc.setCapability("stream", "ci.demo");
-        dc.setCapability("build.number", "111"+System.getenv("BUILD_NUMBER"));
+        dc.setCapability("build.number", "000"+System.getenv("BUILD_NUMBER"));
         dc.setCapability("accessKey", System.getenv("accessKey"));
         dc.setCapability("testName", "Experitest site");
         dc.setCapability("platform", browserName);

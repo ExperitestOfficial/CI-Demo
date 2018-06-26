@@ -30,7 +30,7 @@ public class AndroidTest {
 		dc.setCapability("reportDirectory", "reports");
 		dc.setCapability(MobileCapabilityType.ORIENTATION, "PORTRAIT");
 		dc.setCapability("reportFormat", "xml");
-		dc.setCapability("build.number", "111"+System.getenv("BUILD_NUMBER"));
+		dc.setCapability("build.number", "000"+System.getenv("BUILD_NUMBER"));
 		dc.setCapability("accessKey", System.getenv("accessKey")); 
         dc.setCapability(MobileCapabilityType.APP, "cloud:com.experitest.eribank/com.experitest.ExperiBank.LoginActivity");
         dc.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.experitest.eribank");
