@@ -23,7 +23,7 @@ public class IOSTest extends TestBase  {
     protected IOSDriver<IOSElement> driver = null;
     protected DesiredCapabilities dc = new DesiredCapabilities();
 
-	@BeforeTest
+	@BeforeClass
 	@Parameters("deviceQuery")
 	public void setUp(@Optional("@os='ios'") String deviceQuery) throws Exception{
 		dc.setCapability("deviceQuery", deviceQuery);
@@ -52,7 +52,7 @@ public class IOSTest extends TestBase  {
         driver.findElement(in.Repo.obj("Website.free_trial")).click();
 	}
 	
-	@AfterTest
+	@AfterClass
 	public void tearDown(){
 		driver.quit();
 	}
