@@ -39,17 +39,22 @@ public class IOSTest  {
 		dc.setCapability("stream", "ci.demo");
 		dc.setCapability("platform", "iOS");
 
+		System.out.println("Creating IOSDriver " );
 
 		driver = new IOSDriver<IOSElement>(new URL(System.getenv("url")), dc);
 	}
 
 	@Test
 	public void test(){
+		System.out.println("find login_page_ios " );
+
 		driver.findElement(in.Repo.obj("login_page_ios.Username")).sendKeys("company");
         driver.hideKeyboard();
         driver.findElement(in.Repo.obj("login_page_ios.Password")).sendKeys("company");
         driver.findElement(in.Repo.obj("login_page_ios.Login")).click();
-        new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(in.Repo.obj("Eribank_options.Advanced_Actions")));
+		System.out.println("clicked Login " );
+
+		new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(in.Repo.obj("Eribank_options.Advanced_Actions")));
         driver.findElement(in.Repo.obj("Eribank_options.Advanced_Actions")).click();
         new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(in.Repo.obj("Advanced.Eribank_Website")));
         driver.findElement(in.Repo.obj("Advanced.Eribank_Website")).click();
@@ -60,6 +65,7 @@ public class IOSTest  {
 	
 	@AfterTest
 	public void tearDown(){
+		System.out.println("finished IOSTest");
 		driver.quit();
 	}
 }

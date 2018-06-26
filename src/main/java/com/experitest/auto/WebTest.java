@@ -33,6 +33,7 @@ public class WebTest {
         dc.setCapability("accessKey", System.getenv("accessKey"));
         dc.setCapability("testName", "Experitest site");
         dc.setCapability("platform", browserName);
+        System.out.println("Creating RemoteWebDriver for "+browserName );
 
         driver = new RemoteWebDriver(new URL(System.getenv("url")), dc);
     }
@@ -40,23 +41,35 @@ public class WebTest {
 
     @Test
     public void testExperitest() throws InterruptedException {
+        System.out.println("Hitting experitest.com url");
         driver.get("https://www.experitest.com/");
+        System.out.println("Waiting for xpath /html/body/div[1]/nav/div/button");
         new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[1]/nav/div/button")));
         Thread.sleep(10000);
+        System.out.println("finished testExperitest()");
     }
 
     @Test
     public void testGoogleSearch() {
+        System.out.println("Hitting google.com url");
+
         driver.get("https://www.google.com");
+        System.out.println("Wait for lst-ib ");
+
         new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.id("lst-ib")));
         WebElement searchBar = driver.findElement(By.id("lst-ib"));
+        System.out.println("Click lst-ib ");
+
         searchBar.click();
         searchBar.sendKeys("Experitest");
         searchBar.sendKeys(Keys.ENTER);
+        System.out.println("finished testGoogleSearch() ");
+
     }
 
     @AfterTest
     public void tearDown() {
+        System.out.println("finished WebTest");
         driver.quit();
     }
 

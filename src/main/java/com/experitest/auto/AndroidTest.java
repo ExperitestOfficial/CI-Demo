@@ -37,20 +37,26 @@ public class AndroidTest {
 	    dc.setCapability("instrumentApp", true);
         dc.setCapability("stream", "ci.demo");
         dc.setCapability("platform", "Android");
-
+        System.out.println("Creating AndroidDriver");
         driver = new AndroidDriver<AndroidElement>(new URL(System.getenv("url")), dc);
     }
 
     @Test
     public void test() {
+        System.out.println("Find username field");
         driver.findElement(By.xpath("//*[@id='usernameTextField']")).sendKeys("company");
         driver.hideKeyboard();
+        System.out.println("CLick login");
+
         driver.findElement(By.xpath("//*[@id='passwordTextField']")).sendKeys("company");
         driver.findElement(By.xpath("//*[@id='loginButton']")).click();
+
     }
 
     @AfterTest
-    public void tearDown() {
+    public void tearDown(){
+        System.out.println("Finished AndroidTest");
+
         driver.quit();
     }
 }
