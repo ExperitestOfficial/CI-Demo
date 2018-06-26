@@ -44,6 +44,7 @@ public class WebTest {
         System.out.println("Hitting experitest.com url");
         driver.get("https://www.experitest.com/");
         System.out.println("Waiting for xpath /html/body/div[1]/nav/div/button");
+        Thread.sleep(20000);
         new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[1]/nav/div/button")));
         Thread.sleep(10000);
         System.out.println("finished testExperitest()");

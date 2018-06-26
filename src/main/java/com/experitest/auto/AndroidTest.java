@@ -28,6 +28,7 @@ public class AndroidTest {
         dc.setCapability("testName", testName);
 		dc.setCapability("deviceQuery", deviceQuery);
 		dc.setCapability("reportDirectory", "reports");
+		dc.setCapability(MobileCapabilityType.ORIENTATION, "PORTRAIT");
 		dc.setCapability("reportFormat", "xml");
 		dc.setCapability("build.number", "111"+System.getenv("BUILD_NUMBER"));
 		dc.setCapability("accessKey", System.getenv("accessKey")); 
