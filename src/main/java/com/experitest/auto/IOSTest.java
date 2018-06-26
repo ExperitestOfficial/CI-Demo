@@ -30,13 +30,17 @@ public class IOSTest  {
 		dc.setCapability("deviceQuery", deviceQuery);
 		dc.setCapability("reportDirectory", "reports");
 		dc.setCapability("reportFormat", "xml");
-		dc.setCapability("build.number", System.getenv("BUILD_NUMBER"));
+		dc.setCapability("build.number", "111"+System.getenv("BUILD_NUMBER"));
 		dc.setCapability("accessKey", System.getenv("accessKey")); 
 	    dc.setCapability(MobileCapabilityType.APP, "cloud:com.experitest.ExperiBank");
 	    dc.setCapability("appVersion", "2441");
 	    dc.setCapability(IOSMobileCapabilityType.BUNDLE_ID, "com.experitest.ExperiBank");
 	    dc.setCapability("instrumentApp", true);
-        driver = new IOSDriver<IOSElement>(new URL(System.getenv("url")), dc);
+		dc.setCapability("stream", "ci.demo");
+		dc.setCapability("platform", "iOS");
+
+
+		driver = new IOSDriver<IOSElement>(new URL(System.getenv("url")), dc);
 	}
 
 	@Test
