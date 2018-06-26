@@ -1,0 +1,6 @@
+#Tue Jun 26 13:33:48 EEST 2018
+json={"nodeName"\:"DIV","dumpElementType"\:"WEB","x"\:870,"y"\:333,"width"\:240,"height"\:105,"onScreen"\:true,"uniqueKeys"\:"css,class","css"\:"DIV.free-trial-menu-btn","visible"\:"true","hidden"\:"false","top"\:"true","text"\:"free trial","class"\:"free-trial-menu-btn"}
+context=WEB
+page=Website
+by=xpath
+expression=(//*[@nodeName\='UL']/*/*/*[@text and @nodeName\='DIV' and ./parent\:\:*[@nodeName\='A' and ./parent\:\:*[@nodeName\='LI']]])[2]

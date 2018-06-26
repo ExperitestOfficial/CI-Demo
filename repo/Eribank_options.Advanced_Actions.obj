@@ -1,0 +1,6 @@
+#Tue Jun 26 13:31:41 EEST 2018
+json={"nodeName"\:"UIButtonLabel","dumpElementType"\:"INSTRUMENTED","x"\:363,"y"\:1377,"width"\:396,"height"\:54,"onScreen"\:true,"uniqueKeys"\:"text","visible"\:"true","hidden"\:"false","top"\:"true","knownSuperClass"\:"UILabel","alpha"\:"1","text"\:"Advanced Actions","tag"\:"0","textColor"\:"0x007AFF","accessibilityLabel"\:"Advanced Actions","class"\:"UIButtonLabel","enabled"\:"true"}
+context=INSTRUMENTED
+page=Eribank_options
+by=xpath
+expression=//*[@text and @class\='UIButtonLabel' and ./parent\:\:*[@accessibilityLabel\='Advanced Actions']]

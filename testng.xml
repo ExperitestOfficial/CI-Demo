@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="WebAndNativeTests" parallel="tests">
+  <test name="ChromeTest">
+  	<parameter name="browserName" value="chrome"/>
+    <classes>
+      <class name="com.experitest.auto.WebTest"/>
+    </classes>
+  </test> <!-- Testtt -->
+  <test name="Experitest site">
+  	<parameter name="browserName" value="firefox"/>
+    <classes>
+      <class name="com.experitest.auto.WebTest"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="ChromeTest_#2">
+  	<parameter name="browserName" value="chrome"/>
+    <classes>
+      <class name="com.experitest.auto.WebTest"/>
+    </classes>
+  </test> <!-- Testtt -->
+  <test name="FirefoxTest">
+  	<parameter name="browserName" value="firefox"/>
+    <classes>
+      <class name="com.experitest.auto.WebTest"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="Experitest site firefox">
+  	<parameter name="browserName" value="firefox"/>
+    <classes>
+      <class name="com.experitest.auto.WebTest"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="IE_Test">
+  	<parameter name="browserName" value="internet explorer"/>
+    <classes>
+      <class name="com.experitest.auto.WebTest"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="TestIphone">
+  	<parameter name="browserName" value="iPhone"/>
+  	<parameter name="platformName" value="ios"/>
+    <classes>
+      <class name="com.experitest.auto.WebTest"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="TestAndroidWeb">
+  	<parameter name="browserName" value="chrome"/>
+  	<parameter name="platformName" value="Android"/>
+    <classes>
+      <class name="com.experitest.auto.WebTest"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="TestIOS">
+  	<parameter name="deviceQuery" value="@os='ios'"/>
+    <classes>
+      <class name="com.experitest.auto.IOSTest"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="TestAndroid">
+  	<parameter name="deviceQuery" value="@os='android'"/>
+    <classes>
+      <class name="com.experitest.auto.AndroidTest"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="TestAndroid_#2">
+  	<parameter name="deviceQuery" value="@os='android'"/>
+    <classes>
+      <class name="com.experitest.auto.AndroidTest"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="TestIOS_login">
+  	<parameter name="deviceQuery" value="@os='ios'"/>
+    <classes>
+      <class name="com.experitest.auto.IOSTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
